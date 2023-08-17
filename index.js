@@ -18,8 +18,8 @@ class WebsiteMonitor {
       .then((response) => response.data.ip);
 
     const mailOptions = {
-      from: "noreply@codoly.fr", // From SMTP server adress, set what you want !
-      to: "XXXXX@gmail.com", // Mail adresse you want to receise notification, you can add "cc:" to add several adresses
+      from: "noreply@codoly.fr",
+      to: "XXXXXXXX@gmail.com",
       subject: `[${currentTime}] ${websiteUrl} ${statusMessage}`,
       html: `
         <html>
@@ -51,7 +51,7 @@ class WebsiteMonitor {
           <body>
             <div class="container">
               <center><img src="https://threatpicture.com/wp-content/uploads/linux-torvalds-penguin-painting.jpg" height="150"></img></center>
-              <h1>${websiteUrl} or webserver is down</h1>
+              <h1>${websiteUrl} or associated server ${statusMessage}</h1>
               <p><strong>Website:</strong> ${websiteUrl}</p>
               <p><strong>Detection Time:</strong> ${currentTime}</p>
               <p><strong>Server IP:</strong> ${serverIP}</p>
@@ -126,8 +126,8 @@ const smtpConfig = {
   port: 587,
   secure: false,
   auth: {
-    user: "XXXX@gmail.com", // For GMAIL SMTP users, or replace with your own SMTP server ;)
-    pass: "XXXXXXXXXXXXXX", // Your SMTP user password
+    user: "XXXXXXXX@gmail.com",
+    pass: "XXXXXXXXXXXXXXXX",
   },
 };
 
